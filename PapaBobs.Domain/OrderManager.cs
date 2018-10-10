@@ -9,9 +9,9 @@ namespace PapaBobs.Domain
     public class OrderManager
     {
         // Makes a call to the Persistence layer's CreateOrder() method.
-        public static void CreateOrder()
+        public static void CreateOrder(DTO.OrderDTO orderDTO)
         {
-            Persistence.OrderRepository.CreateOrder();
+            Persistence.OrderRepository.CreateOrder(orderDTO);
         }
     }
 }

@@ -16,7 +16,21 @@ namespace PapaBobs.Web
 
         protected void orderButton_Click(object sender, EventArgs e)
         {
-            Domain.OrderManager.CreateOrder();
+            PapaBobs.DTO.OrderDTO orderDTO = new DTO.OrderDTO();
+
+            orderDTO.OrderId = Guid.NewGuid();
+            orderDTO.Size = 1;
+            orderDTO.Crust = 0;
+            orderDTO.Pepperoni = true;
+            orderDTO.Name = "Test";
+            orderDTO.Address = "123 Elm";
+            orderDTO.ZipCode = "12345";
+            orderDTO.Phone = "555-5555";
+            orderDTO.PaymentType = 0;
+            orderDTO.TotalCost = 16.50M;
+
+            // Call to the Domain layer's CreateOrder()
+            Domain.OrderManager.CreateOrder(orderDTO);
         }
     }
 }

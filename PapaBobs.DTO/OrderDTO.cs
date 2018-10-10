@@ -8,5 +8,18 @@ namespace PapaBobs.DTO
 {
     public class OrderDTO
     {
+        public System.Guid OrderId { get; set; }
+        public int Size { get; set; }
+        public int Crust { get; set; }
+        public bool Sausage { get; set; }
+        public bool Pepperoni { get; set; }
+        public bool Onions { get; set; }
+        public bool GreenPeppers { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public string ZipCode { get; set; }
+        public string Phone { get; set; }
+        public decimal TotalCost { get; set; }
+        public int PaymentType { get; set; }
     }
 }
