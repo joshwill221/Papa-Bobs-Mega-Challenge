@@ -8,5 +8,10 @@ namespace PapaBobs.Domain
 {
     public class OrderManager
     {
+        // Makes a call to the Persistence layer's CreateOrder() method.
+        public static void CreateOrder()
+        {
+            Persistence.OrderRepository.CreateOrder();
+        }
     }
 }
