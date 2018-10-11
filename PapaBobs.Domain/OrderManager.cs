@@ -12,6 +12,7 @@ namespace PapaBobs.Domain
         public static void CreateOrder(DTO.OrderDTO orderDTO)
         {
             orderDTO.OrderId = Guid.NewGuid();
+            orderDTO.TotalCost = PizzaPriceManager.CalculateCost(orderDTO);
             Persistence.OrderRepository.CreateOrder(orderDTO);
         }
     }
