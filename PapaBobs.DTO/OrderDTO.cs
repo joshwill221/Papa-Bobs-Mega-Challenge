@@ -9,8 +9,8 @@ namespace PapaBobs.DTO
     public class OrderDTO
     {
         public System.Guid OrderId { get; set; }
-        public int Size { get; set; }
-        public int Crust { get; set; }
+        public PapaBobs.DTO.Enums.SizeType Size { get; set; }
+        public PapaBobs.DTO.Enums.CrustType Crust { get; set; }
         public bool Sausage { get; set; }
         public bool Pepperoni { get; set; }
         public bool Onions { get; set; }
@@ -20,6 +20,6 @@ namespace PapaBobs.DTO
         public string ZipCode { get; set; }
         public string Phone { get; set; }
         public decimal TotalCost { get; set; }
-        public int PaymentType { get; set; }
+        public PapaBobs.DTO.Enums.PaymentType PaymentType { get; set; }
     }
 }

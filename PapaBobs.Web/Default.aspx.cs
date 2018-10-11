@@ -19,14 +19,14 @@ namespace PapaBobs.Web
             PapaBobs.DTO.OrderDTO orderDTO = new DTO.OrderDTO();
 
             orderDTO.OrderId = Guid.NewGuid();
-            orderDTO.Size = 1;
-            orderDTO.Crust = 0;
+            orderDTO.Size = DTO.Enums.SizeType.Large;
+            orderDTO.Crust = DTO.Enums.CrustType.Thick;
             orderDTO.Pepperoni = true;
             orderDTO.Name = "Test";
             orderDTO.Address = "123 Elm";
             orderDTO.ZipCode = "12345";
             orderDTO.Phone = "555-5555";
-            orderDTO.PaymentType = 0;
+            orderDTO.PaymentType = DTO.Enums.PaymentType.Cash;
             orderDTO.TotalCost = 16.50M;
 
             // Call to the Domain layer's CreateOrder()

@@ -36,8 +36,8 @@
             <PropertyRef Name="OrderId" />
           </Key>
           <Property Name="OrderId" Type="Guid" Nullable="false" />
-          <Property Name="Size" Type="Int32" Nullable="false" />
-          <Property Name="Crust" Type="Int32" Nullable="false" />
+          <Property Name="Size" Type="PapaBobsDbModel.SizeType" Nullable="false" />
+          <Property Name="Crust" Type="PapaBobsDbModel.CrustType" Nullable="false" />
           <Property Name="Sausage" Type="Boolean" Nullable="false" />
           <Property Name="Pepperoni" Type="Boolean" Nullable="false" />
           <Property Name="Onions" Type="Boolean" Nullable="false" />
@@ -47,11 +47,14 @@
           <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TotalCost" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="PaymentType" Type="Int32" Nullable="false" />
+          <Property Name="PaymentType" Type="PapaBobsDbModel.PaymentType" Nullable="false" />
         </EntityType>
         <EntityContainer Name="PapaBobsDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Orders" EntityType="Self.Order" />
         </EntityContainer>
+        <EnumType Name="SizeType" a:ExternalTypeName="PapaBobs.DTO.Enums.SizeType" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        <EnumType Name="CrustType" a:ExternalTypeName="PapaBobs.DTO.Enums.CrustType" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        <EnumType Name="PaymentType" a:ExternalTypeName="PapaBobs.DTO.Enums.PaymentType" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
