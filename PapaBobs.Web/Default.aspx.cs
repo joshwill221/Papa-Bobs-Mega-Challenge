@@ -21,6 +21,28 @@ namespace PapaBobs.Web
                 return;
             }
 
+            var orderDTO = buildOrder();
+
+            // Call to the Domain layer's CreateOrder()
+            Domain.OrderManager.CreateOrder(orderDTO);
+            Response.Redirect("Success.aspx");
+        }
+
+        protected void recalculateTotalCost(object sender, EventArgs e)
+        {
+            // Exit if size or crust dropdown aren't both filled in.
+            if (sizeDropDown.SelectedValue == "")
+                return;
+            if (crustDropDown.SelectedValue == "")
+                return;
+
+            var order = buildOrder();
+            decimal cost = Domain.PizzaPriceManager.CalculateCost(order);
+            resultLabel.Text = string.Format("<h3>{0:C}</h3>", cost);
+        }
+
+        private DTO.OrderDTO buildOrder()
+        {
             PapaBobs.DTO.OrderDTO orderDTO = new DTO.OrderDTO();
 
             orderDTO.Size = determineSize();
@@ -34,10 +56,12 @@ namespace PapaBobs.Web
             orderDTO.ZipCode = zipCodeTextBox.Text;
             orderDTO.Phone = phoneTextBox.Text;
             orderDTO.PaymentType = determinePayment();
+            orderDTO.TotalCost = 16.5M;
 
-            // Call to the Domain layer's CreateOrder()
-            Domain.OrderManager.CreateOrder(orderDTO);
+            return orderDTO;
         }
+
+        /* Validation Functions. */
 
         private bool textBoxDataIsValid()
         {

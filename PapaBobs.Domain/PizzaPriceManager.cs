@@ -7,7 +7,7 @@ using PapaBobs.DTO;
 
 namespace PapaBobs.Domain
 {
-    class PizzaPriceManager
+    public class PizzaPriceManager
     {
         private static DTO.PizzaPriceDTO getPizzaPrices()
         {
