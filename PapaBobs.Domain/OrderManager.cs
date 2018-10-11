@@ -11,6 +11,7 @@ namespace PapaBobs.Domain
         // Makes a call to the Persistence layer's CreateOrder() method.
         public static void CreateOrder(DTO.OrderDTO orderDTO)
         {
+            orderDTO.OrderId = Guid.NewGuid();
             Persistence.OrderRepository.CreateOrder(orderDTO);
         }
     }

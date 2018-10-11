@@ -65,7 +65,7 @@
 
             <div class="custom-radio">
                 <label>
-                    <asp:RadioButton ID="cashRadio" runat="server" GroupName="PaymentGroup" />
+                    <asp:RadioButton ID="cashRadio" runat="server" GroupName="PaymentGroup" Checked="true" />
                     Cash
                 </label>
             </div>
@@ -83,6 +83,8 @@
             <asp:Button ID="orderButton" Text="Order" runat="server" OnClick="orderButton_Click" CssClass="btn btn-lg btn-primary" />
 
         </div>
+
+        <asp:Label ID="validationLabel" Text="" Visible="false" runat="server" CssClass="bg-danger"></asp:Label>
 
         <h3>Total Cost:</h3>
         <div class="form-group">
