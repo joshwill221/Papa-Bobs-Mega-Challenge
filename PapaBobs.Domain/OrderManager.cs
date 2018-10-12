@@ -15,5 +15,15 @@ namespace PapaBobs.Domain
             orderDTO.TotalCost = PizzaPriceManager.CalculateCost(orderDTO);
             Persistence.OrderRepository.CreateOrder(orderDTO);
         }
+
+        public static object GetOrders()
+        {
+            return Persistence.OrderRepository.GetOrders();
+        }
+
+        public static void CompleteOrder(Guid orderId)
+        {
+            Persistence.OrderRepository.CompleteOrder(orderId);
+        }
     }
 }
